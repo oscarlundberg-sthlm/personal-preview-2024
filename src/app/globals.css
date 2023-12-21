@@ -7,6 +7,8 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --container-sidespace: 3vw;
+  --full-svh: 100svh;
+  --full-screen-h: var(--full-svh, 100vh);
 }
 
 @media (prefers-color-scheme: dark) {

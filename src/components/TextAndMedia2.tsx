@@ -1,16 +1,18 @@
 "use client";
 import Media from "@/types/media";
+import classNames from "classnames";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
 interface Props {
   text?: ReactNode;
   media?: Media;
+  flipX?: boolean;
 }
 
-function TextAndMedia({ text, media }: Props) {
+function TextAndMedia({ text, media, flipX = false }: Props) {
   return (
-    <div className="relative z-20">
+    <div className="relative z-20 lg:px-[calc(var(--container-sidespace)*2)]">
       <div className="grid grid-cols-3">
         <div>
           <div className="relative overflow-hidden rounded-full pt-[100%]">
@@ -18,9 +20,7 @@ function TextAndMedia({ text, media }: Props) {
               (media.isVideo ? (
                 <></>
               ) : (
-                <div
-                  className="absolute inset-0" /* style={{ transform: `translateY(-${imageDistance}px)` }} */
-                >
+                <div className="absolute inset-0">
                   <motion.img
                     src={media.src}
                     alt={media.alt}
@@ -32,9 +32,20 @@ function TextAndMedia({ text, media }: Props) {
               ))}
           </div>
         </div>
-        <div className="flex items-center col-span-2 relative z-10">
+        <div
+          className={classNames("flex items-center col-span-2 relative z-10", {
+            "-order-1 justify-end": flipX,
+          })}
+        >
           {text && (
-            <div className="big-text -ml-[6vw] max-w-[60vw]">{text}</div>
+            <div
+              className={classNames("big-text max-w-[55vw]", {
+                "-ml-[6vw]": !flipX,
+                "-mr-[6vw]": flipX,
+              })}
+            >
+              {text}
+            </div>
           )}
         </div>
       </div>
