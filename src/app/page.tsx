@@ -17,43 +17,50 @@ export default function Home() {
         loop
         className="fixed inset-0 h-full w-full object-cover"
       ></video>
+      <div className="fixed inset-0 h-full w-full bg-gradient-radial from-white to-black mix-blend-multiply"></div>
       <Hero2 />
       <div className="relative text-gray-900">
-        <Container className="pb-[max(12vw,76px)]">
+        <Container className="pt-[max(3vw)] pb-[max(10vw)]">
           <BigText>
-            I tend to be a good fit in creative environments, where soft values
-            rank high. Where there’s cooperation with a mindset of “one plus one
-            is three”.
+            Frontend coder with a bit of design knowledge,
+            <br />
+            coming from a background in music
           </BigText>
         </Container>
-        <Container className="pb-[max(6vw,76px)]">
+        {/* <div className="border-triangle"></div> */}
+        <Container className="py-[4vw] relative" bgOptOut>
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+          <div className="absolute bg-white inset-y-0 left-0 w-[var(--container-sidespace)]"></div>
+          <div className="absolute bg-white inset-y-0 right-0 w-[var(--container-sidespace)]"></div>
           <TextAndMedia2
             text={
               <>
-                <p>
-                  I’ve had fun writing code, but coding isn’t fun in and of
-                  itself. The drive comes from somewhere else.
+                <p className="text-white">
+                  For me - code, design & product is essentially all about
+                  individuals & relationships
                 </p>
               </>
             }
             media={{
-              src: "/summertime.jpg",
-              alt: "Summer, shades and happy days",
+              src: "/FB_IMG_1703247264185__01.jpg",
+              alt: "Hugs",
               isVideo: false,
               width: 998,
               height: 1012,
             }}
           />
         </Container>
+        {/* <div className="border-triangle rotate-180"></div> */}
+        <div className="bg-white pt-[12vw]"></div>
         <Circles_v2 />
-        <Container className="py-[max(6vw,76px)]">
+        <Container className="py-[12vw]">
           <TextAndMedia2
             flipX
             text={
               <>
                 <p>
-                  I’ve had fun writing code, but coding isn’t fun in and of
-                  itself. The drive comes from somewhere else.
+                  As a musician you learn that cooperation, focus and
+                  preparation can all happen while having fun
                 </p>
               </>
             }

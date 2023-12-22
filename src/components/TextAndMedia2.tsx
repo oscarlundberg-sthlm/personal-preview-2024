@@ -26,7 +26,7 @@ function TextAndMedia({ text, media, flipX = false }: Props) {
                     alt={media.alt}
                     width={media.width}
                     height={media.height}
-                    className="w-full origin-center"
+                    className="w-full origin-center brightness-90"
                   />
                 </div>
               ))}
@@ -39,9 +39,9 @@ function TextAndMedia({ text, media, flipX = false }: Props) {
         >
           {text && (
             <div
-              className={classNames("big-text max-w-[55vw]", {
-                "-ml-[6vw]": !flipX,
-                "-mr-[6vw]": flipX,
+              className={classNames("big-text max-w-[55vw] font-bold", {
+                "-ml-[4vw]": !flipX,
+                "-mr-[4vw]": flipX,
               })}
             >
               {text}
