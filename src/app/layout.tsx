@@ -1,24 +1,47 @@
-import type { Metadata } from 'next'
-import { Inter, Inter_Tight, Newsreader } from 'next/font/google'
-import './globals.css'
+import type { Metadata } from "next";
+import { Inter, Inter_Tight, Rock_Salt, Smooch } from "next/font/google";
+import "./globals.css";
 
-const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' })
-const interTight = Inter_Tight({ subsets: ['latin'], display: 'swap', variable: '--font-inter-tight' })
-const newsreader = Newsreader({ subsets: ['latin'], display: 'swap', variable: '--font-newsreader' })
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+const interTight = Inter_Tight({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter-tight",
+});
+const rockSalt = Rock_Salt({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-rocksalt",
+  weight: "400",
+});
+const smooch = Smooch({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-smooch",
+  weight: "400",
+});
 
 export const metadata: Metadata = {
-  title: 'Oscar Lundberg • Creative coder',
-  description: '',
-}
+  title: "Oscar Lundberg • Creative coder",
+  description: "",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${interTight.variable} ${newsreader.variable}`}>{children}</body>
+      <body
+        className={`${inter.variable} ${interTight.variable} ${rockSalt.variable} ${smooch.variable}`}
+      >
+        {children}
+      </body>
     </html>
-  )
+  );
 }

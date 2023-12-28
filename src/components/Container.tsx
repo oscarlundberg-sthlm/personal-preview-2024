@@ -21,7 +21,7 @@ function Container({
           "px-[var(--container-sidespace)]": sideSpace === "both",
           "pl-[var(--container-sidespace)]": sideSpace === "left",
           "pr-[var(--container-sidespace)]": sideSpace === "right",
-          "bg-white": !bgOptOut,
+          " ": !bgOptOut,
         },
         className
       )}

@@ -8,7 +8,26 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      sm: "640px",
+      // => @media (min-width: 640px) { ... }
+
+      md: "768px",
+      // => @media (min-width: 768px) { ... }
+
+      lg: "1024px",
+      // => @media (min-width: 1024px) { ... }
+
+      xl: "1280px",
+      // => @media (min-width: 1280px) { ... }
+
+      "2xl": "1536px",
+      // => @media (min-width: 1536px) { ... }
+    },
     extend: {
+      screens: {
+        "3xl": "1800px",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -16,11 +35,19 @@ const config: Config = {
       },
       colors: {
         gray: colors.neutral,
+        vibrant: {
+          "steel-blue": "#3f88c5",
+          keppel: "#44bba4",
+          onyx: "#393e41",
+          cinnabar: "#e94f37",
+          ivory: "#f6f7eb",
+        },
       },
       fontFamily: {
         sans: "var(--font-inter)",
         ["sans-tight"]: "var(--font-inter-tight)",
-        serif: "var(--font-newsreader)",
+        rocksalt: "var(--font-rocksalt)",
+        smooch: "var(--font-smooch)",
       },
     },
   },

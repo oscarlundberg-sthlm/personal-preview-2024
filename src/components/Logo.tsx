@@ -1,14 +1,6 @@
-interface Props {
-  className?: string;
-}
-
-function Logo({ className }: Props) {
+function Logo(args: any) {
   return (
-    <svg
-      viewBox="0 0 1512 433"
-      className={className}
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg viewBox="0 0 1512 433" xmlns="http://www.w3.org/2000/svg" {...args}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
