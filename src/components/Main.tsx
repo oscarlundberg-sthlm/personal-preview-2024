@@ -87,10 +87,8 @@ export default function Main() {
         <Container className="py-[calc(3*var(--container-sidespace))]">
           <TextAndMedia
             flipX
-            suffendix={
-              <>Once a bass player, always&nbsp;a&nbsp;band&nbsp;mate</>
-            }
-            heading={<>Musician at heart</>}
+            suffendix={<>Once a bass player...</>}
+            heading={<>...Always a band mate</>}
             text={
               <>
                 Playing music, I got a lot of free lessons about cooperation,
