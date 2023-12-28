@@ -11,7 +11,7 @@
 }
 
 body {
-  @apply overscroll-none text-[var(--bg-color)];
+  @apply overscroll-none text-[var(--bg-color)] selection:text-white selection:bg-[var(--bg-color)];
 }
 
 @layer base {
