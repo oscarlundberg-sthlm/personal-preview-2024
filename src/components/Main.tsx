@@ -75,7 +75,7 @@ export default function Main() {
               to anyones&apos; ideas.
             </p>
             <p className="font-sans text-base lg:text-[18px] text-gray-900 font-normal leading-[1.7] my-[1.8em]">
-              If you're thinking{" "}
+              If you&apos;re thinking{" "}
               <span className=" italic">
                 &quot;duh, yeah those&apos;re some pretty obvious things&quot;
               </span>{" "}
