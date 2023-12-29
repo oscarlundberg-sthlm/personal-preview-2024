@@ -18,6 +18,7 @@ function Footer() {
             <Logo
               className="w-auto h-[45px] sm:h-[57px] cursor-pointer"
               onClick={handleLogoClick}
+              aria-label="Click to go to the top of the page"
             />
           </div>
           <div className="self-stretch flex justify-end items-center">
@@ -25,6 +26,7 @@ function Footer() {
               <Link
                 href="mailto:oscarlundberg@hotmail.com"
                 className="flex items-center justify-center"
+                aria-label="Send me an email"
               >
                 <div className="p-2">
                   <Email className="h-auto w-6" fill="currentColor" />
@@ -36,6 +38,7 @@ function Footer() {
                 href="https://github.com/oscarlundberg-sthlm"
                 target="_blank"
                 className="flex items-center justify-center"
+                aria-label="Visit my Github page"
               >
                 <div className="p-2">
                   <Github className="h-auto w-6" fill="currentColor" />
@@ -47,6 +50,7 @@ function Footer() {
                 href="https://www.linkedin.com/in/oscarlundberg-sthlm"
                 target="_blank"
                 className="flex items-center justify-center"
+                aria-label="Visit my Linkedin page"
               >
                 <div className="p-2">
                   <LinkedIn className="h-auto w-6" fill="currentColor" />

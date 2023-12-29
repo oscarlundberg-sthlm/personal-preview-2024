@@ -27,7 +27,8 @@ const smooch = Smooch({
 
 export const metadata: Metadata = {
   title: "Oscar Lundberg • Creative coder",
-  description: "",
+  description:
+    "Hey 👋🏻 I'm Oscar, all around creative person and coder. This is a glimpse into who I am.",
 };
 
 export default function RootLayout({
