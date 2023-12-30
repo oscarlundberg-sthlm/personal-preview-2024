@@ -5,15 +5,9 @@ interface Props {
   children: ReactNode;
   sideSpace?: "both" | "left" | "right";
   className?: string;
-  bgOptOut?: boolean;
 }
 
-function Container({
-  children,
-  sideSpace = "both",
-  className,
-  bgOptOut = false,
-}: Props) {
+function Container({ children, sideSpace = "both", className }: Props) {
   return (
     <div
       className={classNames(
@@ -21,7 +15,6 @@ function Container({
           "px-[var(--container-sidespace)]": sideSpace === "both",
           "pl-[var(--container-sidespace)]": sideSpace === "left",
           "pr-[var(--container-sidespace)]": sideSpace === "right",
-          " ": !bgOptOut,
         },
         className
       )}

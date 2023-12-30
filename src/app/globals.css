@@ -6,8 +6,8 @@
   --container-sidespace: clamp(16px,3vw,64px);
   --full-svh: 100svh;
   --full-screen-h: var(--full-svh, 100vh);
-  --bg-color: #e94f37;
-  --border-color: #e94f37;
+  --bg-color: #000000;
+  --border-color: #ffffff;
 }
 
 body {
@@ -21,12 +21,13 @@ body {
   .font-smooch {
     font-size: 1.5em;
   }
-}
-
-@layer utilities {
   .border {
     @apply border-gray-900
   }
+}
+
+@layer utilities {
+
   .bg-clip-text {
     background-clip: text;
     -webkit-background-clip: text;

@@ -18,11 +18,11 @@ export default function Main() {
         loop
         className="fixed inset-0 h-full w-full object-cover"
       ></video>
-      <div className="fixed inset-0 h-full w-full bg-gradient-radial from-vibrant-steel-blue to-black mix-blend-multiply"></div>
+      <div className="fixed inset-0 h-full w-full bg-gradient-radial from-vibrant-steel-blue to-black mix-blend-difference"></div>
       <Hero />
-      <div className="relative text-gray-900 bg-[var(--bg-color)] transition-colors duration-1000 border-x-2 border-[var(--border-color)]">
-        <div className="pt-[var(--container-sidespace)]"></div>
-        <Container className="pb-[calc(3*var(--container-sidespace))] pt-[calc(1*var(--container-sidespace))]">
+      <div className="relative text-gray-900 bg-black transition-colors duration-1000 border-x-2 border-[var(--border-color)]">
+        <div className=" h-[var(--container-sidespace)]"></div>
+        <Container className="relative pb-[calc(3*var(--container-sidespace))] pt-[calc(1*var(--container-sidespace))] ">
           <TextAndMedia
             suffendix={<p>welcome</p>}
             heading={<>Hey 👋🏻 I&apos;m&nbsp;Oscar</>}
@@ -43,29 +43,29 @@ export default function Main() {
           />
         </Container>
         <Skills />
-        <Container bgOptOut className="">
+        <Container className="">
           <Article
             heading={
               <>
                 <span className="font-smooch">Analog feels</span>
                 <br />
-                <span className="text-gray-400">
+                <span className="text-gray-500">
                   <small>in a</small>
                 </span>{" "}
                 digital world
               </>
             }
           >
-            <h3 className="font-sans-tight text-[20px] lg:text-[28px] leading-[1.2] font-bold text-gray-900 mb-[1.8em]">
+            <h3 className="font-sans-tight text-[20px] lg:text-[28px] leading-[1.2] font-bold text-gray-50 mb-[1.8em]">
               Balance in life is important, right?
             </h3>
-            <p className="font-sans text-[18px] lg:text-[24px] leading-[1.5] font-medium text-gray-900 mb-[1.8em]">
+            <p className="font-sans text-[18px] lg:text-[24px] leading-[1.5] font-medium text-gray-300 mb-[1.8em]">
               You want to eat junk food, so you should work out. You&apos;re
               stressed out, so you should find time to unwind. Maybe you have a
               really tense and hard work environment, now humour becomes really
               important.
             </p>
-            <p className="font-sans text-base lg:text-[18px] text-gray-900 font-normal leading-[1.7] my-[1.8em]">
+            <p className="font-sans text-base lg:text-[18px] text-gray-50 font-normal leading-[1.7] my-[1.8em]">
               <span className="font-semibold">
                 Dealing with computers and strict boolean code, maybe we should
                 balance that out with things that make us human.
@@ -74,7 +74,7 @@ export default function Main() {
               group or pair. Simple things like being nice, respectful and open
               to anyones&apos; ideas.
             </p>
-            <p className="font-sans text-base lg:text-[18px] text-gray-900 font-normal leading-[1.7] my-[1.8em]">
+            <p className="font-sans text-base lg:text-[18px] text-gray-50 font-normal leading-[1.7] my-[1.8em]">
               If you&apos;re thinking{" "}
               <span className=" italic">
                 &quot;duh, yeah those&apos;re some pretty obvious things&quot;
@@ -82,16 +82,16 @@ export default function Main() {
               - me too. I&apos;m thinking the same thing, and we&apos;d probably
               make a good team.
             </p>
-            <h3 className="font-sans-tight text-[20px] lg:text-[28px] leading-[1.2] font-bold text-gray-900 mt-[2.4em] mb-[1.8em]">
+            <h3 className="font-sans-tight text-[20px] lg:text-[28px] leading-[1.2] font-bold text-gray-50 mt-[2.4em] mb-[1.8em]">
               The idea of &quot;one and one is three&quot;
             </h3>
-            <p className="font-sans text-base lg:text-[18px] text-gray-900 font-normal leading-[1.7] my-[1.8em]">
+            <p className="font-sans text-base lg:text-[18px] text-gray-50 font-normal leading-[1.7] my-[1.8em]">
               Say you&apos;re working on something by yourself, you work along
               and get done with the thing. Imaging someone else doing the same
               work, but taking another route and achieveing a slightly different
               result. That&apos;s &quot;one and one is two&quot;.
             </p>
-            <p className="font-sans text-base lg:text-[18px] text-gray-900 font-normal leading-[1.7] mt-[1.8em]">
+            <p className="font-sans text-base lg:text-[18px] text-gray-50 font-normal leading-[1.7] mt-[1.8em]">
               Now imaging you&apos;re doing the same work, but together.
               You&apos;re brainstorming and discussing ideas, solutions and
               routes - then the outcome may become something neither of you
