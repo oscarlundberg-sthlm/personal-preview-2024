@@ -2,30 +2,46 @@
 
 import Article from "@/components/Article";
 import Container from "@/components/Container";
-import Hero from "@/components/Hero";
 import Skills from "@/components/Skills";
 import TextAndMedia from "@/components/TextAndMedia";
 import Footer from "./Footer";
+import ThreeDEnvironment from "./ThreeDEnvironment";
 
 export default function Main() {
   return (
-    <main className="relative max-w-full sm:max-w-[min(calc(100vw-2*var(--container-sidespace)),1800px)] mx-auto">
-      <video
-        src="/pexels-film-composite-16392053_(1080p).mp4"
-        poster="/heroposter.jpg"
-        autoPlay
-        muted
-        loop
-        className="fixed inset-0 h-full w-full object-cover"
-      ></video>
-      <div className="fixed inset-0 h-full w-full bg-gradient-radial from-vibrant-steel-blue to-black mix-blend-difference"></div>
-      <Hero />
-      <div className="relative text-gray-900 bg-black transition-colors duration-1000 border-x-2 border-[var(--border-color)]">
-        <div className=" h-[var(--container-sidespace)]"></div>
+    <main className="relative max-w-full sm:max-w-[min(100vw,1800px)] mx-auto">
+      {/* <video
+          src="/pexels-film-composite-16392053_(1080p).mp4"
+          poster="/heroposter.jpg"
+          autoPlay
+          muted
+          loop
+          className="fixed inset-0 h-full w-full object-cover"
+        ></video>
+        */}
+      {/* <div className="fixed -z-10 inset-0 h-full w-full bg-gradient-radial from-[#181818] to-transparent"></div> */}
+      <div className="fixed inset-14 sm:inset-0">
+        <ThreeDEnvironment />
+      </div>
+
+      {/* <Hero /> */}
+      <div className=" h-[var(--full-screen-h)] relative inset-0 -z-10 flex items-center justify-center">
+        <h1>
+          <div className="text-gray-50 font-sans-tight font-bold text-[9vw] sm:text-[7vw] lg:text-[5vw] uppercase leading-[0.8em]">
+            Oscar Lundberg
+          </div>
+          <div className=" font-smooch text-gold text-[6vw] sm:text-[4vw] lg:text-[3vw]">
+            creative coder
+          </div>
+        </h1>
+      </div>
+      <div className="relative h-[20vh] 3xl:border-x-2 border-gradient"></div>
+      <div className="relative text-gray-900 transition-colors duration-1000 3xl:border-x-2 border-[var(--border-color)] ">
+        {/* <div className=" h-[var(--container-sidespace)]"></div> */}
         <Container className="relative pb-[calc(3*var(--container-sidespace))] pt-[calc(1*var(--container-sidespace))] ">
           <TextAndMedia
             suffendix={<p>welcome</p>}
-            heading={<>Hey 👋🏻 I&apos;m&nbsp;Oscar</>}
+            heading={<>Hey, I&apos;m&nbsp;Oscar</>}
             text={
               <>
                 All around creative person and&nbsp;coder.
@@ -49,7 +65,7 @@ export default function Main() {
               <>
                 <span className="font-smooch">Analog feels</span>
                 <br />
-                <span className="text-gray-500">
+                <span className="text-gold">
                   <small>in a</small>
                 </span>{" "}
                 digital world

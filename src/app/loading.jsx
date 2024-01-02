@@ -1,7 +1,7 @@
 function Loading() {
   return (
-    <div className="h-[var(--full-screen-h) bg-vibrant-onyx flex items-center justify-center">
-      <div className="text-vibrant-cinnabar">
+    <div className="h-[var(--full-screen-h)] p-[var(--container-sidespace)] flex items-end justify-end">
+      <div className="text-gold">
         <svg
           width="36px"
           height="36px"

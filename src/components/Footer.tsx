@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Logo from "./Logo";
 
 function Footer() {
   const handleLogoClick = () => {
@@ -11,52 +10,43 @@ function Footer() {
   };
 
   return (
-    <div className="pb-[calc(var(--container-sidespace)*2)] text-[var(--border-color)]">
-      <div className=" pt-[calc(var(--container-sidespace))] border-b-2 border-current">
-        <div className="flex justify-between items-end">
-          <div className="">
-            <Logo
-              className="w-auto h-[45px] sm:h-[57px] cursor-pointer"
-              onClick={handleLogoClick}
-              aria-label="Click to go to the top of the page"
-            />
+    <div className="pb-[calc(var(--container-sidespace)*2)] text-gray-500">
+      <div className=" pt-[calc(var(--container-sidespace))]">
+        <div className="flex justify-center items-center">
+          <div className="mr-1 min-w-max min-h-max transition-colors hover:text-gold-100">
+            <Link
+              href="mailto:oscarlundberg@hotmail.com"
+              className="flex items-center justify-center"
+              aria-label="Send me an email"
+            >
+              <div className="p-2">
+                <Email className="h-auto w-6" fill="currentColor" />
+              </div>
+            </Link>
           </div>
-          <div className="self-stretch flex justify-end items-center">
-            <div className="mr-1 min-w-max min-h-max hover:opacity-70 transition-opacity">
-              <Link
-                href="mailto:oscarlundberg@hotmail.com"
-                className="flex items-center justify-center"
-                aria-label="Send me an email"
-              >
-                <div className="p-2">
-                  <Email className="h-auto w-6" fill="currentColor" />
-                </div>
-              </Link>
-            </div>
-            <div className="mr-1 min-w-max min-h-max hover:opacity-70 transition-opacity">
-              <Link
-                href="https://github.com/oscarlundberg-sthlm"
-                target="_blank"
-                className="flex items-center justify-center"
-                aria-label="Visit my Github page"
-              >
-                <div className="p-2">
-                  <Github className="h-auto w-6" fill="currentColor" />
-                </div>
-              </Link>
-            </div>
-            <div className="mr-1 min-w-max min-h-max hover:opacity-70 transition-opacity">
-              <Link
-                href="https://www.linkedin.com/in/oscarlundberg-sthlm"
-                target="_blank"
-                className="flex items-center justify-center"
-                aria-label="Visit my Linkedin page"
-              >
-                <div className="p-2">
-                  <LinkedIn className="h-auto w-6" fill="currentColor" />
-                </div>
-              </Link>
-            </div>
+          <div className="mr-1 min-w-max min-h-max transition-colors hover:text-gold-100">
+            <Link
+              href="https://github.com/oscarlundberg-sthlm"
+              target="_blank"
+              className="flex items-center justify-center"
+              aria-label="Visit my Github page"
+            >
+              <div className="p-2">
+                <Github className="h-auto w-6" fill="currentColor" />
+              </div>
+            </Link>
+          </div>
+          <div className="mr-1 min-w-max min-h-max transition-colors hover:text-gold-100">
+            <Link
+              href="https://www.linkedin.com/in/oscarlundberg-sthlm"
+              target="_blank"
+              className="flex items-center justify-center"
+              aria-label="Visit my Linkedin page"
+            >
+              <div className="p-2">
+                <LinkedIn className="h-auto w-6" fill="currentColor" />
+              </div>
+            </Link>
           </div>
         </div>
       </div>

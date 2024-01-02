@@ -42,6 +42,10 @@ const config: Config = {
           cinnabar: "#e94f37",
           ivory: "#f6f7eb",
         },
+        gold: {
+          DEFAULT: "#938861",
+          100: "#CFC8B1",
+        },
       },
       fontFamily: {
         sans: "var(--font-inter)",

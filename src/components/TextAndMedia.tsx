@@ -52,7 +52,7 @@ function TextAndMedia({
         >
           {suffendix && (
             <>
-              <div className="font-rocksalt text-gray-500 text-[clamp(14px,1.5vw,28px)] ">
+              <div className="font-rocksalt text-gold text-[clamp(14px,1.5vw,28px)] ">
                 {suffendix}
               </div>
               <div className="border-b border-gray-800"></div>
@@ -61,7 +61,7 @@ function TextAndMedia({
           {heading && (
             <div
               className={classNames(
-                "big-text text-gray-400 mt-[calc(var(--container-sidespace)*2)] sm:mt-[var(--container-sidespace)]",
+                "big-text text-gray-50 mt-[calc(var(--container-sidespace)*2)] sm:mt-[var(--container-sidespace)]",
                 {}
               )}
             >
@@ -69,7 +69,7 @@ function TextAndMedia({
             </div>
           )}
           {text && (
-            <div className="text-[clamp(20px,2.2vw,32px)] leading-[1.2em] mt-[clamp(20px,2.2vw,32px)] mr-[calc(var(--container-sidespace))] font-sans-tight text-gray-500">
+            <div className="text-[clamp(20px,2.2vw,32px)] leading-[1.2em] mt-[clamp(20px,2.2vw,32px)] mr-[calc(var(--container-sidespace))] font-sans-tight text-gray-300">
               {text}
             </div>
           )}

@@ -7,11 +7,11 @@
   --full-svh: 100svh;
   --full-screen-h: var(--full-svh, 100vh);
   --bg-color: #000000;
-  --border-color: #ffffff;
+  --border-color: #383838;
 }
 
 body {
-  @apply overscroll-none text-[var(--bg-color)] selection:text-white selection:bg-[var(--bg-color)];
+  @apply overscroll-none text-[var(--bg-color)] selection:text-black selection:bg-gold bg-gray-950;
 }
 
 @layer base {
@@ -23,6 +23,9 @@ body {
   }
   .border {
     @apply border-gray-900
+  }
+  .border-gradient {
+    border-image: linear-gradient(#00000000,var(--border-color)) 30;
   }
 }
 

@@ -34,7 +34,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "dist/types/**/*.ts"
-  ],
+, "src/components/Avatar.jsx", "src/app/loading.jsx"  ],
   "exclude": [
     "node_modules"
   ]
