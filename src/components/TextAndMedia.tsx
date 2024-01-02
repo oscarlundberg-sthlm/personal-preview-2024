@@ -21,6 +21,7 @@ function TextAndMedia({
   media,
   flipX = false,
 }: Props) {
+
   return (
     <div className="relative z-20">
       <div className="sm:grid grid-cols-3 gap-[var(--container-sidespace)]">

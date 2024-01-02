@@ -5,7 +5,9 @@ import Container from "@/components/Container";
 import Skills from "@/components/Skills";
 import TextAndMedia from "@/components/TextAndMedia";
 import Footer from "./Footer";
+import Hero from "./Hero";
 import ThreeDEnvironment from "./ThreeDEnvironment";
+import Balance from "./articles/Balance";
 
 export default function Main() {
   return (
@@ -24,17 +26,8 @@ export default function Main() {
         <ThreeDEnvironment />
       </div>
 
-      {/* <Hero /> */}
-      <div className=" h-[var(--full-screen-h)] relative inset-0 -z-10 flex items-center justify-center">
-        <h1>
-          <div className="text-gray-50 font-sans-tight font-bold text-[9vw] sm:text-[7vw] lg:text-[5vw] uppercase leading-[0.8em]">
-            Oscar Lundberg
-          </div>
-          <div className=" font-smooch text-gold text-[6vw] sm:text-[4vw] lg:text-[3vw]">
-            creative coder
-          </div>
-        </h1>
-      </div>
+      <Hero />
+
       <div className="relative h-[20vh] 3xl:border-x-2 border-gradient"></div>
       <div className="relative text-gray-900 transition-colors duration-1000 3xl:border-x-2 border-[var(--border-color)] ">
         {/* <div className=" h-[var(--container-sidespace)]"></div> */}
@@ -72,52 +65,10 @@ export default function Main() {
               </>
             }
           >
-            <h3 className="font-sans-tight text-[20px] lg:text-[28px] leading-[1.2] font-bold text-gray-50 mb-[1.8em]">
-              Balance in life is important, right?
-            </h3>
-            <p className="font-sans text-[18px] lg:text-[24px] leading-[1.5] font-medium text-gray-300 mb-[1.8em]">
-              You want to eat junk food, so you should work out. You&apos;re
-              stressed out, so you should find time to unwind. Maybe you have a
-              really tense and hard work environment, now humour becomes really
-              important.
-            </p>
-            <p className="font-sans text-base lg:text-[18px] text-gray-50 font-normal leading-[1.7] my-[1.8em]">
-              <span className="font-semibold">
-                Dealing with computers and strict boolean code, maybe we should
-                balance that out with things that make us human.
-              </span>{" "}
-              Hand out just a little more compliments, solve something as a
-              group or pair. Simple things like being nice, respectful and open
-              to anyones&apos; ideas.
-            </p>
-            <p className="font-sans text-base lg:text-[18px] text-gray-50 font-normal leading-[1.7] my-[1.8em]">
-              If you&apos;re thinking{" "}
-              <span className=" italic">
-                &quot;duh, yeah those&apos;re some pretty obvious things&quot;
-              </span>{" "}
-              - me too. I&apos;m thinking the same thing, and we&apos;d probably
-              make a good team.
-            </p>
-            <h3 className="font-sans-tight text-[20px] lg:text-[28px] leading-[1.2] font-bold text-gray-50 mt-[2.4em] mb-[1.8em]">
-              The idea of &quot;one and one is three&quot;
-            </h3>
-            <p className="font-sans text-base lg:text-[18px] text-gray-50 font-normal leading-[1.7] my-[1.8em]">
-              Say you&apos;re working on something by yourself, you work along
-              and get done with the thing. Imaging someone else doing the same
-              work, but taking another route and achieveing a slightly different
-              result. That&apos;s &quot;one and one is two&quot;.
-            </p>
-            <p className="font-sans text-base lg:text-[18px] text-gray-50 font-normal leading-[1.7] mt-[1.8em]">
-              Now imaging you&apos;re doing the same work, but together.
-              You&apos;re brainstorming and discussing ideas, solutions and
-              routes - then the outcome may become something neither of you
-              would have thought of individually. That&apos;s three. That&apos;s
-              the level up that cooperation can lead to, and part of the power
-              of valuing creativity and our human qualities.
-            </p>
+            <Balance />
           </Article>
         </Container>
-        <Container className="py-[calc(3*var(--container-sidespace))]">
+        <Container className="pt-[calc(4*var(--container-sidespace))] pb-[calc(3*var(--container-sidespace))]">
           <TextAndMedia
             flipX
             suffendix={<>Musicianship</>}

@@ -1,17 +1,31 @@
 "use client";
-import Logo from "./Logo";
+
+import { motion, useScroll, useTransform } from "framer-motion";
 
 function Hero() {
+  const { scrollY } = useScroll();
+  const opacity = useTransform(() => (scrollY.get() > 20 ? 0.1 : 1));
+
   return (
-    <div className="[--header-height:var(--full-screen-h)] relative h-[var(--header-height)] overflow-hidden border-t-2 sm:border-t-0 border-x-2 border-[var(--border-color)] transition-colors duration-1000">
-      <h1 className="hidden">Oscar Lundberg - Creative coder</h1>
-      <div className="text-right text-[var(--border-color)] mt-[var(--container-sidespace)] mx-[var(--container-sidespace)] font-sans-tight text-[clamp(24px,3.30687831vw,56px)] leading-[1.1em] font-medium">
-        Development <br />& design
-      </div>
-      <div className="absolute -bottom-px inset-x-0 top-0 flex flex-col justify-end">
-        <Logo className="w-full -bottom-px shrink-0 text-[var(--bg-color)] transition-colors duration-1000" />
-        <div className=" h-[var(--container-sidespace)] bg-[var(--bg-color)] transition-colors duration-1000"></div>
-      </div>
+    <div className=" h-[var(--full-screen-h)] relative inset-0 -z-10 flex items-center justify-center">
+      <h1>
+        <motion.div
+          className="text-gray-50 transition-opacity duration-500 font-sans-tight font-bold text-[9vw] sm:text-[7vw] lg:text-[5vw] uppercase leading-[0.8em]"
+          style={{
+            opacity: opacity,
+          }}
+        >
+          Oscar Lundberg
+        </motion.div>
+        <motion.div
+          className=" font-smooch transition-opacity duration-500 text-gold text-[6vw] sm:text-[4vw] lg:text-[3vw]"
+          style={{
+            opacity: opacity,
+          }}
+        >
+          creative coder
+        </motion.div>
+      </h1>
     </div>
   );
 }
