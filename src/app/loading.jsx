@@ -1,6 +1,6 @@
 function Loading() {
   return (
-    <div className="h-[var(--full-screen-h)] p-[var(--container-sidespace)] flex items-end justify-end">
+    <div className="h-[var(--full-screen-h)] p-[var(--container-sidespace)] bg-black/40 flex items-center justify-center">
       <div className="text-gold">
         <svg
           width="36px"

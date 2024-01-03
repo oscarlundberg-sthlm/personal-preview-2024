@@ -8,7 +8,17 @@ function Camera() {
   const { getAnimationValue: getPositionZ } = useScrollTransformThree({
     scrollEnd: 800,
     initialPos: 8,
-    movement: -2,
+    movement: 2,
+  });
+  const { getAnimationValue: getPositionY } = useScrollTransformThree({
+    scrollEnd: 800,
+    initialPos: 0.7,
+    movement: -4,
+  });
+  const { getAnimationValue: getRotationX } = useScrollTransformThree({
+    scrollEnd: 800,
+    initialPos: 0,
+    movement: 0.5,
   });
 
   useFrame(() => {

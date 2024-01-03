@@ -46,6 +46,7 @@ const config: Config = {
           DEFAULT: "#938861",
           100: "#CFC8B1",
         },
+        blue: "#151a23",
       },
       fontFamily: {
         sans: "var(--font-inter)",

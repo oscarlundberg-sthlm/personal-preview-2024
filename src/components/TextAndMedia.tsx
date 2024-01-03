@@ -1,7 +1,7 @@
 "use client";
 import Media from "@/types/media";
 import classNames from "classnames";
-import { motion } from "framer-motion";
+import Image from "next/image";
 import { ReactNode } from "react";
 
 interface Props {
@@ -21,43 +21,40 @@ function TextAndMedia({
   media,
   flipX = false,
 }: Props) {
-
   return (
     <div className="relative z-20">
-      <div className="sm:grid grid-cols-3 gap-[var(--container-sidespace)]">
+      <div className="sm:grid grid-cols-3 gap-[var(--container-sidespace)] ">
         <div>
-          <div className="relative overflow-hidden pt-[100%] border">
+          <div className="relative overflow-hidden pt-[100%]">
             {!!media &&
               (media.isVideo ? (
                 <></>
               ) : (
                 <div className="absolute inset-0">
-                  <motion.img
+                  <Image
                     src={media.src}
                     alt={media.alt}
                     width={media.width}
                     height={media.height}
                     className="w-full h-full origin-center"
                   />
+                  <div className="bg-gold absolute inset-0 mix-blend-multiply"></div>
                 </div>
               ))}
           </div>
         </div>
         <div
-          className={classNames(
-            "col-span-2 relative z-10 border-x border-b border-gray-800 bg-gray-900 sm:border sm:border-gray-800 p-[var(--container-sidespace)]",
-            {
-              "-order-1": flipX,
-            }
-          )}
+          className={classNames("col-span-2 relative z-10", {
+            "-order-1": flipX,
+          })}
         >
           {suffendix && (
-            <>
-              <div className="font-rocksalt text-gold text-[clamp(14px,1.5vw,28px)] ">
+            <div className="text-[clamp(14px,1.5vw,28px)]">
+              <div className="font-rocksalt text-gold mt-[1.3em] sm:mt-0 ">
                 {suffendix}
               </div>
-              <div className="border-b border-gray-800"></div>
-            </>
+              <div className="border-b border-gold/30 mt-[0.2em]"></div>
+            </div>
           )}
           {heading && (
             <div

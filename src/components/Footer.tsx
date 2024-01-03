@@ -1,16 +1,8 @@
 import Link from "next/link";
 
 function Footer() {
-  const handleLogoClick = () => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
-  };
-
   return (
-    <div className="pb-[calc(var(--container-sidespace)*2)] text-gray-500">
+    <div className="pb-[calc(var(--container-sidespace)*3)] sm:pb-[calc(var(--container-sidespace)*2)] text-gold">
       <div className=" pt-[calc(var(--container-sidespace))]">
         <div className="flex justify-center items-center">
           <div className="mr-1 min-w-max min-h-max transition-colors hover:text-gold-100">

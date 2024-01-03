@@ -26,6 +26,7 @@ const smooch = Smooch({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env?.NEXT_PUBLIC_URL ?? ""),
   title: "Oscar Lundberg • Creative coder",
   description:
     "Hey 👋🏻 I'm Oscar, all around creative person and coder. This is a glimpse into who I am.",

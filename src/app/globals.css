@@ -6,12 +6,12 @@
   --container-sidespace: clamp(16px,3vw,64px);
   --full-svh: 100svh;
   --full-screen-h: var(--full-svh, 100vh);
-  --bg-color: #000000;
-  --border-color: #383838;
+  --bg-color: #0a0a0a;
+  --border-color: #9388614C;
 }
 
 body {
-  @apply overscroll-none text-[var(--bg-color)] selection:text-black selection:bg-gold bg-gray-950;
+  @apply overscroll-none text-gray-50 selection:text-black selection:bg-gold bg-gray-950;
 }
 
 @layer base {

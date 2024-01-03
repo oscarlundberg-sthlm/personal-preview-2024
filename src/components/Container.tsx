@@ -5,11 +5,13 @@ interface Props {
   children: ReactNode;
   sideSpace?: "both" | "left" | "right";
   className?: string;
+  id?: string;
 }
 
-function Container({ children, sideSpace = "both", className }: Props) {
+function Container({ children, sideSpace = "both", className, id }: Props) {
   return (
     <div
+      id={id}
       className={classNames(
         {
           "px-[var(--container-sidespace)]": sideSpace === "both",

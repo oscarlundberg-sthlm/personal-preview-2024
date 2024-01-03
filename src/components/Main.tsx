@@ -6,6 +6,7 @@ import Skills from "@/components/Skills";
 import TextAndMedia from "@/components/TextAndMedia";
 import Footer from "./Footer";
 import Hero from "./Hero";
+import ScrollToContent from "./ScrollToContent";
 import ThreeDEnvironment from "./ThreeDEnvironment";
 import Balance from "./articles/Balance";
 
@@ -27,11 +28,15 @@ export default function Main() {
       </div>
 
       <Hero />
+      <ScrollToContent />
 
-      <div className="relative h-[20vh] 3xl:border-x-2 border-gradient"></div>
-      <div className="relative text-gray-900 transition-colors duration-1000 3xl:border-x-2 border-[var(--border-color)] ">
+      <div className="relative h-[20vh] 3xl:border-x-2 border-gradient bg-gradient-to-b from-transparent to-gray-950/70"></div>
+      <div className="relative text-gray-900 transition-colors duration-1000 3xl:border-x-2 border-[var(--border-color)] bg-gray-950/70">
         {/* <div className=" h-[var(--container-sidespace)]"></div> */}
-        <Container className="relative pb-[calc(3*var(--container-sidespace))] pt-[calc(1*var(--container-sidespace))] ">
+        <Container
+          id="content-start"
+          className="relative pb-[calc(2*var(--container-sidespace))] pt-[calc(1*var(--container-sidespace))] "
+        >
           <TextAndMedia
             suffendix={<p>welcome</p>}
             heading={<>Hey, I&apos;m&nbsp;Oscar</>}
@@ -39,7 +44,7 @@ export default function Main() {
               <>
                 All around creative person and&nbsp;coder.
                 <br />
-                This is a glimpse into who&nbsp;I&nbsp;am.
+                This is a glimpse of who&nbsp;I&nbsp;am.
               </>
             }
             media={{
@@ -52,23 +57,23 @@ export default function Main() {
           />
         </Container>
         <Skills />
-        <Container className="">
-          <Article
-            heading={
-              <>
-                <span className="font-smooch">Analog feels</span>
-                <br />
-                <span className="text-gold">
-                  <small>in a</small>
-                </span>{" "}
-                digital world
-              </>
-            }
-          >
-            <Balance />
-          </Article>
-        </Container>
-        <Container className="pt-[calc(4*var(--container-sidespace))] pb-[calc(3*var(--container-sidespace))]">
+        {/* <Container className=""> */}
+        <Article
+          heading={
+            <>
+              <span className="font-smooch">Analog feels</span>
+              <br />
+              <span className="text-gold">
+                <small>in a</small>
+              </span>{" "}
+              digital world
+            </>
+          }
+        >
+          <Balance />
+        </Article>
+        {/* </Container> */}
+        <Container className="pt-[calc(5*var(--container-sidespace))] sm:pt-[calc(4*var(--container-sidespace))] pb-[calc(3*var(--container-sidespace))]">
           <TextAndMedia
             flipX
             suffendix={<>Musicianship</>}
