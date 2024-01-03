@@ -67,7 +67,7 @@ function TextAndMedia({
             </div>
           )}
           {text && (
-            <div className="text-[clamp(20px,2.2vw,32px)] leading-[1.2em] mt-[clamp(20px,2.2vw,32px)] mr-[calc(var(--container-sidespace))] font-sans-tight text-gray-300">
+            <div className="text-[clamp(22px,2.2vw,32px)] leading-[1.2em] mt-[clamp(20px,2.2vw,32px)] mr-[calc(var(--container-sidespace))] font-sans-tight text-gray-300">
               {text}
             </div>
           )}

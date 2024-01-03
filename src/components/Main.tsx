@@ -13,16 +13,6 @@ import Balance from "./articles/Balance";
 export default function Main() {
   return (
     <main className="relative max-w-full sm:max-w-[min(100vw,1800px)] mx-auto">
-      {/* <video
-          src="/pexels-film-composite-16392053_(1080p).mp4"
-          poster="/heroposter.jpg"
-          autoPlay
-          muted
-          loop
-          className="fixed inset-0 h-full w-full object-cover"
-        ></video>
-        */}
-      {/* <div className="fixed -z-10 inset-0 h-full w-full bg-gradient-radial from-[#181818] to-transparent"></div> */}
       <div className="fixed inset-14 sm:inset-0">
         <ThreeDEnvironment />
       </div>
@@ -32,7 +22,6 @@ export default function Main() {
 
       <div className="relative h-[20vh] 3xl:border-x-2 border-gradient bg-gradient-to-b from-transparent to-gray-950/70"></div>
       <div className="relative text-gray-900 transition-colors duration-1000 3xl:border-x-2 border-[var(--border-color)] bg-gray-950/70">
-        {/* <div className=" h-[var(--container-sidespace)]"></div> */}
         <Container
           id="content-start"
           className="relative pb-[calc(2*var(--container-sidespace))] pt-[calc(1*var(--container-sidespace))] "
