@@ -24,7 +24,7 @@ function ScrollToContent() {
         className=" pointer-events-auto group p-4 -m-4 sm:p-0 sm:m-0"
         onClick={clickHandler}
       >
-        <div className="bg-gold/30 relative rounded-full h-10 w-10 flex items-center justify-center transition-colors duration-300 group-hover:bg-gold">
+        <div className="bg-gold-800 relative rounded-full h-10 w-10 flex items-center justify-center transition-colors duration-300 group-hover:bg-gold">
           <svg
             className=" h-[50%] w-auto text-gray-950"
             viewBox="0 0 33 42"

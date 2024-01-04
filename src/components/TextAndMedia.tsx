@@ -30,7 +30,7 @@ function TextAndMedia({
               (media.isVideo ? (
                 <></>
               ) : (
-                <div className="absolute inset-0">
+                <div className="absolute inset-0 bg-blue-800">
                   <Image
                     src={media.src}
                     alt={media.alt}
@@ -38,7 +38,7 @@ function TextAndMedia({
                     height={media.height}
                     className="w-full h-full origin-center"
                   />
-                  <div className="bg-gold absolute inset-0 mix-blend-multiply"></div>
+                  {/* <div className=" bg-gold absolute inset-0 mix-blend-hard-light"></div> */}
                 </div>
               ))}
           </div>

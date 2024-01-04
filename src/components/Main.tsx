@@ -37,7 +37,7 @@ export default function Main() {
               </>
             }
             media={{
-              src: "/summertime.jpg",
+              src: "/oscar_jeanshirt.png",
               alt: "In the days of skating and making music",
               isVideo: false,
               width: 730,
@@ -66,16 +66,21 @@ export default function Main() {
           <TextAndMedia
             flipX
             suffendix={<>Musicianship</>}
-            heading={<>Once a bass player...</>}
+            heading={
+              <>
+                Once a band mate, <wbr />
+                always a band mate
+              </>
+            }
             text={
               <>
-                ...always a band mate. In music, I got a lot of free lessons
-                about cooperation, listening, and having fun while working
-                towards&nbsp;a&nbsp;goal.
+                Through music, I gained valuable life points in collaboration
+                while having fun. All the while collectively pursuiting a shared
+                objective.
               </>
             }
             media={{
-              src: "/skateboard_and_music_era.jpg",
+              src: "/skateboard_and_music_era.png",
               alt: "In the days of skating and making music",
               isVideo: false,
               width: 730,

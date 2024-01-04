@@ -45,8 +45,12 @@ const config: Config = {
         gold: {
           DEFAULT: "#938861",
           100: "#CFC8B1",
+          800: "#302d21",
         },
-        blue: "#151a23",
+        blue: {
+          DEFAULT: "#151a23",
+          800: "#141a22",
+        },
       },
       fontFamily: {
         sans: "var(--font-inter)",
