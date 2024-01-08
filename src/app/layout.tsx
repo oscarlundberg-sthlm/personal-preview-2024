@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Inter_Tight, Rock_Salt, Smooch } from "next/font/google";
+import { Fraunces, Inter, Inter_Tight } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -12,17 +12,10 @@ const interTight = Inter_Tight({
   display: "swap",
   variable: "--font-inter-tight",
 });
-const rockSalt = Rock_Salt({
+const fraunces = Fraunces({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-rocksalt",
-  weight: "400",
-});
-const smooch = Smooch({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-smooch",
-  weight: "400",
+  variable: "--font-fraunces",
 });
 
 export const metadata: Metadata = {
@@ -40,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${interTight.variable} ${rockSalt.variable} ${smooch.variable}`}
+        className={`${inter.variable} ${interTight.variable} ${fraunces.variable}`}
       >
         {children}
       </body>

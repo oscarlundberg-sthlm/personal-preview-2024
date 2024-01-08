@@ -35,28 +35,11 @@ const config: Config = {
       },
       colors: {
         gray: colors.neutral,
-        vibrant: {
-          "steel-blue": "#3f88c5",
-          keppel: "#44bba4",
-          onyx: "#393e41",
-          cinnabar: "#e94f37",
-          ivory: "#f6f7eb",
-        },
-        gold: {
-          DEFAULT: "#938861",
-          100: "#CFC8B1",
-          800: "#302d21",
-        },
-        blue: {
-          DEFAULT: "#151a23",
-          800: "#141a22",
-        },
       },
       fontFamily: {
         sans: "var(--font-inter)",
         ["sans-tight"]: "var(--font-inter-tight)",
-        rocksalt: "var(--font-rocksalt)",
-        smooch: "var(--font-smooch)",
+        fraunces: "var(--font-fraunces)",
       },
     },
   },

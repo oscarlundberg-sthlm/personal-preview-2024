@@ -25,7 +25,7 @@ const generateTranslateX = (direction: direction, distance: number) => {
  *
  */
 const useScrollRevealEffect = ({ ref, direction = "y" }: Props) => {
-  const viewportMargin = "-10% 0% -10% 0%";
+  const viewportMargin = "-20% 0% -40% 0%";
   const yDistance = 20;
   const xDistance = 20;
 

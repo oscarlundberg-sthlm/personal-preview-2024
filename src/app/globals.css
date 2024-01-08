@@ -3,59 +3,32 @@
 @tailwind utilities;
 
 :root {
-  --container-sidespace: clamp(16px,3vw,64px);
   --full-svh: 100svh;
   --full-screen-h: var(--full-svh, 100vh);
-  --bg-color: #0a0a0a;
-  --border-color: #9388614C;
+  --max-width: 1500px;
+  --activeColorH: 0;
+  --activeColorS: 100%;
+  --activeColorL: 51%;
+  --activeColorHSL: hsl(var(--activeColorH), var(--activeColorS), var(--activeColorL));
 }
 
 *:focus-visible {
-  @apply outline-gold;
+  @apply outline-gray-100;
 }
 
 body {
-  @apply overscroll-none text-gray-50 selection:text-black selection:bg-gold bg-gray-950;
+  @apply overscroll-none text-gray-50 selection:text-black selection:bg-gray-100 bg-gray-950;
 }
 
 @layer base {
-  .big-text {
-    @apply font-sans-tight text-[clamp(32px,3.30687831vw,56px)] leading-[1.1em] font-bold;
-  }
-  .font-smooch {
-    font-size: 1.5em;
-  }
-  .border {
-    @apply border-gray-900
-  }
-  .border-gradient {
-    border-image: linear-gradient(#00000000,var(--border-color)) 30;
-  }
-  .text-reveal-things {
-    color: #FFFFFF22;
-    background-image: linear-gradient(90deg, var(--color), var(--color));
-    background-clip: text;
-    background-repeat: no-repeat;
-    background-size: 0% 100%;
-  }
+
 }
 
 @layer utilities {
-
-  .bg-clip-text {
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    padding-bottom: 0.05em;
-    margin-bottom: -0.05em;
+  .h-screen {
+    height: var(--full-screen-h);
   }
-  .bg-golden {
-    background-image: linear-gradient(7deg, #82764A, #E2D5A5);
-  }
-  .bg-diagonal {
-    background-image: linear-gradient(150deg, #171717 50%, 50%, #EEEEEE);
-    background-size: 240% 100%;
-    background-repeat: no-repeat;
-    background-position-x: 0%;
+  .word-spacing {
+    word-spacing: 0.08ch;
   }
 }

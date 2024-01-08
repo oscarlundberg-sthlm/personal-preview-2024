@@ -2,47 +2,43 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <div className="pb-[calc(var(--container-sidespace)*3)] sm:pb-[calc(var(--container-sidespace)*2)] text-gold">
-      <div className=" pt-[calc(var(--container-sidespace))]">
-        <div className="flex justify-center items-center">
-          <div className="mr-1 min-w-max min-h-max transition-colors hover:text-gold-100">
-            <Link
-              href="mailto:oscarlundberg@hotmail.com"
-              className="flex items-center justify-center"
-              aria-label="Send me an email"
-            >
-              <div className="p-2">
-                <Email className="h-auto w-6" fill="currentColor" />
-              </div>
-            </Link>
+    <footer className="flex justify-center items-center">
+      <div className="min-w-max min-h-max">
+        <Link
+          href="mailto:oscarlundberg@hotmail.com"
+          className="flex items-center justify-center"
+          aria-label="Send me an email"
+        >
+          <div className="p-2">
+            <Email className="h-auto w-6" fill="currentColor" />
           </div>
-          <div className="mr-1 min-w-max min-h-max transition-colors hover:text-gold-100">
-            <Link
-              href="https://github.com/oscarlundberg-sthlm"
-              target="_blank"
-              className="flex items-center justify-center"
-              aria-label="Visit my Github page"
-            >
-              <div className="p-2">
-                <Github className="h-auto w-6" fill="currentColor" />
-              </div>
-            </Link>
-          </div>
-          <div className="mr-1 min-w-max min-h-max transition-colors hover:text-gold-100">
-            <Link
-              href="https://www.linkedin.com/in/oscarlundberg-sthlm"
-              target="_blank"
-              className="flex items-center justify-center"
-              aria-label="Visit my Linkedin page"
-            >
-              <div className="p-2">
-                <LinkedIn className="h-auto w-6" fill="currentColor" />
-              </div>
-            </Link>
-          </div>
-        </div>
+        </Link>
       </div>
-    </div>
+      <div className="min-w-max min-h-max">
+        <Link
+          href="https://github.com/oscarlundberg-sthlm"
+          target="_blank"
+          className="flex items-center justify-center"
+          aria-label="Visit my Github page"
+        >
+          <div className="p-2">
+            <Github className="h-auto w-6" fill="currentColor" />
+          </div>
+        </Link>
+      </div>
+      <div className="min-w-max min-h-max">
+        <Link
+          href="https://www.linkedin.com/in/oscarlundberg-sthlm"
+          target="_blank"
+          className="flex items-center justify-center"
+          aria-label="Visit my Linkedin page"
+        >
+          <div className="p-2">
+            <LinkedIn className="h-auto w-6" fill="currentColor" />
+          </div>
+        </Link>
+      </div>
+    </footer>
   );
 }
 
