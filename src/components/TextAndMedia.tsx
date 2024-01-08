@@ -1,8 +1,9 @@
 "use client";
+import useScrollRevealEffect from "@/hooks/useScrollRevealEffect";
 import Media from "@/types/media";
 import classNames from "classnames";
 import Image from "next/image";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 
 interface Props {
   heading?: ReactNode;
@@ -21,11 +22,31 @@ function TextAndMedia({
   media,
   flipX = false,
 }: Props) {
+  const refHeading = useRef(null);
+  const effectHeading = useScrollRevealEffect({
+    ref: refHeading,
+  });
+  const refText = useRef(null);
+  const effectText = useScrollRevealEffect({
+    ref: refText,
+  });
+  const refImage = useRef(null);
+  const effectImage = useScrollRevealEffect({
+    ref: refImage,
+    // direction: flipX ? "xLeft" : "xRight",
+  });
+
+  useEffect(() => {
+    effectHeading();
+    effectText();
+    effectImage();
+  }, [effectHeading, effectText, effectImage]);
+
   return (
     <div className="relative z-20">
       <div className="sm:grid grid-cols-3 gap-[var(--container-sidespace)] ">
         <div>
-          <div className="relative overflow-hidden pt-[100%]">
+          <div ref={refImage} className="relative overflow-hidden pt-[100%]">
             {!!media &&
               (media.isVideo ? (
                 <></>
@@ -58,16 +79,17 @@ function TextAndMedia({
           )}
           {heading && (
             <div
-              className={classNames(
-                "big-text text-gray-50 mt-[calc(var(--container-sidespace)*2)] sm:mt-[var(--container-sidespace)]",
-                {}
-              )}
+              ref={refHeading}
+              className="big-text text-gray-50 mt-[calc(var(--container-sidespace)*2)] sm:mt-[var(--container-sidespace)] transition-all duration-500"
             >
               {heading}
             </div>
           )}
           {text && (
-            <div className="text-[clamp(22px,2.2vw,32px)] leading-[1.2em] mt-[clamp(20px,2.2vw,32px)] mr-[calc(var(--container-sidespace))] font-sans-tight text-gray-300">
+            <div
+              ref={refText}
+              className="text-[clamp(22px,2.2vw,32px)] leading-[1.2em] mt-[clamp(20px,2.2vw,32px)] mr-[calc(var(--container-sidespace))] font-sans-tight text-gray-300 transition-all duration-500"
+            >
               {text}
             </div>
           )}

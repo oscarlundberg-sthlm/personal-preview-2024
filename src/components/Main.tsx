@@ -20,8 +20,8 @@ export default function Main() {
       <Hero />
       <ScrollToContent />
 
-      <div className="relative h-[20vh] 3xl:border-x-2 border-gradient bg-gradient-to-b from-transparent to-gray-950/70"></div>
-      <div className="relative text-gray-900 transition-colors duration-1000 3xl:border-x-2 border-[var(--border-color)] bg-gray-950/70">
+      <div className="relative h-[20vh] 3xl:border-x-2 border-gradient bg-gradient-to-b from-transparent to-gray-950"></div>
+      <div className="relative text-gray-900 transition-colors duration-1000 3xl:border-x-2 border-[var(--border-color)] bg-gray-950">
         <Container
           id="content-start"
           className="relative pb-[calc(2*var(--container-sidespace))] pt-[calc(1*var(--container-sidespace))] "
@@ -38,7 +38,7 @@ export default function Main() {
             }
             media={{
               src: "/oscar_jeanshirt.png",
-              alt: "In the days of skating and making music",
+              alt: "Me, smiling in summer",
               isVideo: false,
               width: 730,
               height: 730,
@@ -81,7 +81,7 @@ export default function Main() {
             }
             media={{
               src: "/skateboard_and_music_era.png",
-              alt: "In the days of skating and making music",
+              alt: "Me in the days of skateboarding and music making",
               isVideo: false,
               width: 730,
               height: 730,

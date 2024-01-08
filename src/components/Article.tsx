@@ -1,4 +1,5 @@
-import { ReactNode } from "react";
+import useScrollRevealEffect from "@/hooks/useScrollRevealEffect";
+import { ReactNode, useEffect, useRef } from "react";
 
 interface Props {
   heading: ReactNode | string;
@@ -6,6 +7,13 @@ interface Props {
 }
 
 function Article({ heading, children }: Props) {
+  const refArticle = useRef(null);
+  const effect = useScrollRevealEffect({ ref: refArticle });
+
+  useEffect(() => {
+    effect();
+  }, [effect]);
+
   return (
     <div className="relative ">
       <div className="overflow-hidden [--height:calc(1.7*var(--container-sidespace))] relative pt-[var(--height)] h-px">
@@ -19,8 +27,8 @@ function Article({ heading, children }: Props) {
               {heading}
             </h2>
           </div>
-          <article className="col-start-2 col-span-2 relative sm:pl-[var(--container-sidespace)] sm:border-l border-gold/30 max-w-[600px]">
-            <div>{children}</div>
+          <article className="col-start-2 col-span-2 relative sm:pl-[var(--container-sidespace)] sm:border-l border-gold/30 max-w-[600px] transition-all duration-500">
+            <div ref={refArticle}>{children}</div>
           </article>
         </div>
       </div>

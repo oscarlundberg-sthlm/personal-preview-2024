@@ -9,7 +9,7 @@ function Balance() {
         out, so you should find time to unwind. Maybe you have a tense and hard
         work environment, now humour becomes really important.
       </p>
-      <p className="font-sans text-base lg:text-[18px] text-gray-300 font-light leading-[1.9] my-[2em]">
+      <p className="font-sans text-base lg:text-[18px] text-gray-50 font-light leading-[1.9] my-[2em]">
         <span className="font-medium">
           Dealing with computers and strict boolean code, maybe we should
           balance that out with things that make us human.

@@ -10,6 +10,10 @@
   --border-color: #9388614C;
 }
 
+*:focus-visible {
+  @apply outline-gold;
+}
+
 body {
   @apply overscroll-none text-gray-50 selection:text-black selection:bg-gold bg-gray-950;
 }
