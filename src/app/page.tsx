@@ -26,6 +26,7 @@ export default function Home() {
               <Section
                 index={0}
                 bgImageSrc="/img/DSC_0153-min.jpg"
+                backgroundPosition="top 40% center"
                 hsl={{
                   h: 46,
                   s: 80,
@@ -67,7 +68,7 @@ export default function Home() {
                   s: 71,
                   l: 54,
                 }}
-                heading={<>Now I climb up walls</>}
+                heading={<>Now I climb walls</>}
                 text={
                   <>
                     I like going to the climbing gym in my spare time. Outdoors
