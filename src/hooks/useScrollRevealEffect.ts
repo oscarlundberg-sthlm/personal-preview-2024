@@ -89,7 +89,7 @@ const useScrollRevealEffect = ({ ref, direction = "y" }: Props) => {
 
     // initial settings
     ref.current.style.transition =
-      "opacity 700ms ease 400ms, transform 700ms ease 400ms";
+      "opacity 700ms ease 125ms, transform 700ms ease 125ms";
 
     // initial state
     determineAndSetState(ref, scrollContainerRef);
