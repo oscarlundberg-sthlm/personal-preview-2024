@@ -1,5 +1,6 @@
+import { useScrollRefContext } from "@/contexts/ScrollRefContext";
 import { inView } from "framer-motion";
-import { RefObject } from "react";
+import { RefObject, useCallback, useMemo } from "react";
 
 type direction = "y" | "xRight" | "xLeft";
 
@@ -25,49 +26,73 @@ const generateTranslateX = (direction: direction, distance: number) => {
  *
  */
 const useScrollRevealEffect = ({ ref, direction = "y" }: Props) => {
-  const viewportMargin = "-20% 0% -40% 0%";
+  const viewportMargin = "0% 0% 0% 0%";
   const yDistance = 20;
   const xDistance = 20;
+  const { ref: scrollContainerRef } = useScrollRefContext();
 
   const translateY = direction === "y" ? yDistance : 0;
   const translateX = generateTranslateX(direction, xDistance);
 
-  const setElementState = {
-    inViewport: function () {
-      if (!ref.current) return;
-      ref.current.style.opacity = "1";
-      ref.current.style.transform = "translateY(0px) translateX(0px)";
-    },
-    aboveViewport: function () {
-      if (!ref.current) return;
-      ref.current.style.opacity = "0";
-      ref.current.style.transform = `translateY(-${translateY}px) translateX(${translateX}px)`;
-    },
-    belowViewport: function () {
-      if (!ref.current) return;
-      ref.current.style.opacity = "0";
-      ref.current.style.transform = `translateY(${translateY}px) translateX(${translateX}px)`;
-    },
-  };
+  const setElementState = useMemo(
+    () => ({
+      inViewport: function (element: HTMLElement) {
+        element.style.opacity = "1";
+        element.style.transform = "translateY(0px) translateX(0px)";
+      },
+      aboveViewport: function (element: HTMLElement) {
+        element.style.opacity = "0";
+        element.style.transform = `translateY(-${translateY}px) translateX(${translateX}px)`;
+      },
+      belowViewport: function (element: HTMLElement) {
+        element.style.opacity = "0";
+        element.style.transform = `translateY(${translateY}px) translateX(${translateX}px)`;
+      },
+      leftOfViewport: function (element: HTMLElement) {
+        element.style.opacity = "0";
+        element.style.transform = `translateY(${translateY}px) translateX(-${translateX}px)`;
+      },
+      rightOfViewport: function (element: HTMLElement) {
+        element.style.opacity = "0";
+        element.style.transform = `translateY(${translateY}px) translateX(${translateX}px)`;
+      },
+    }),
+    [translateY, translateX]
+  );
 
-  const runEffect = () => {
-    if (!ref.current) return;
+  const runEffect = useCallback(() => {
+    if (!ref?.current || !scrollContainerRef?.current) return;
+
+    const determineAndSetState = (ref: any, containerRef: any) => {
+      if (!ref?.current || !scrollContainerRef?.current) return;
+
+      const rect = ref.current.getBoundingClientRect();
+      const containerRect = containerRef.current.getBoundingClientRect();
+
+      if (rect.bottom <= containerRect.top) {
+        // element is above screen
+        setElementState.aboveViewport(ref.current);
+      } else if (rect.top >= containerRect.bottom) {
+        // element is below screen
+        setElementState.belowViewport(ref.current);
+      } else if (rect.left >= containerRect.right) {
+        // element is to the right of the viewport
+        setElementState.rightOfViewport(ref.current);
+      } else if (rect.right <= containerRect.left) {
+        // element is to the left of the viewport
+        setElementState.leftOfViewport(ref.current);
+      } else {
+        // element is visible
+        setElementState.inViewport(ref.current);
+      }
+    };
 
     // initial settings
-    ref.current.style.transition = "opacity 1000ms ease, transform 1000ms ease";
+    ref.current.style.transition =
+      "opacity 700ms ease 400ms, transform 700ms ease 400ms";
 
     // initial state
-    const rect = ref.current.getBoundingClientRect();
-    if (rect.bottom < 0) {
-      // element is above screen
-      setElementState.aboveViewport();
-    } else if (rect.top > window.innerHeight) {
-      // element is below screen
-      setElementState.belowViewport();
-    } else {
-      // element is visible
-      setElementState.inViewport();
-    }
+    determineAndSetState(ref, scrollContainerRef);
 
     inView(
       ref.current,
@@ -75,31 +100,23 @@ const useScrollRevealEffect = ({ ref, direction = "y" }: Props) => {
         if (!ref.current) return;
 
         // enter viewport
-        setElementState.inViewport();
+        setElementState.inViewport(ref.current);
 
         // exit viewport
         return (entry) => {
-          if (!ref.current) return;
-          if (!entry.rootBounds) return;
+          if (!ref?.current || !scrollContainerRef?.current) return;
 
-          if (entry.boundingClientRect.top < entry.rootBounds?.top) {
-            // exit up
-            setElementState.aboveViewport();
-            return;
-          }
-          if (entry.boundingClientRect.y >= 0) {
-            // exit down
-            setElementState.belowViewport();
-          }
+          determineAndSetState(ref, scrollContainerRef);
 
           return;
         };
       },
       {
         margin: viewportMargin,
+        root: scrollContainerRef?.current,
       }
     );
-  };
+  }, [ref, scrollContainerRef, setElementState]);
 
   return runEffect;
 };

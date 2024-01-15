@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import { ScrollRefContextProvider } from "@/contexts/ScrollRefContext";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter, Inter_Tight } from "next/font/google";
 import "./globals.css";
 
@@ -25,17 +26,22 @@ export const metadata: Metadata = {
     "Hey 👋🏻 I'm Oscar, all around creative person and coder. This is a glimpse into who I am.",
 };
 
+export const viewport: Viewport = {
+  themeColor: "#0a0a0a",
+};
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full w-full">
       <body
-        className={`${inter.variable} ${interTight.variable} ${fraunces.variable}`}
+        className={`${inter.variable} ${interTight.variable} ${fraunces.variable} h-full w-full`}
       >
-        {children}
+        <div className="absolute h-full w-full bg-black/85"></div>
+        <ScrollRefContextProvider>{children}</ScrollRefContextProvider>
       </body>
     </html>
   );

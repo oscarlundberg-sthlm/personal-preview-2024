@@ -1,43 +1,48 @@
 import Link from "next/link";
+import ScrollerButton from "./ScrollerButton";
 
 function Footer() {
   return (
-    <footer className="flex justify-center items-center">
-      <div className="min-w-max min-h-max">
-        <Link
-          href="mailto:oscarlundberg@hotmail.com"
-          className="flex items-center justify-center"
-          aria-label="Send me an email"
-        >
-          <div className="p-2">
-            <Email className="h-auto w-6" fill="currentColor" />
-          </div>
-        </Link>
+    <footer className="flex justify-between items-center max-w-72 xl:max-w-64 grow">
+      <ScrollerButton direction="left" />
+      <div className="flex justify-center items-center">
+        <div className="min-w-max min-h-max">
+          <Link
+            href="mailto:oscarlundberg@hotmail.com"
+            className="p-0.5 flex items-center justify-center group rounded-full"
+            aria-label="Send me an email"
+          >
+            <div className="p-2.5 transition-colors duration-100 ease-linear bg-transparent group-hover:bg-[hsl(var(--activeColorH),var(--activeColorS),var(--activeColorL),0.2)] rounded-full">
+              <Email className="h-auto w-5" fill="currentColor" />
+            </div>
+          </Link>
+        </div>
+        <div className="min-w-max min-h-max">
+          <Link
+            href="https://github.com/oscarlundberg-sthlm"
+            target="_blank"
+            className="p-0.5 flex items-center justify-center group rounded-full"
+            aria-label="Visit my Github page"
+          >
+            <div className="p-2.5 transition-colors duration-100 ease-linear bg-transparent group-hover:bg-[hsl(var(--activeColorH),var(--activeColorS),var(--activeColorL),0.2)] rounded-full">
+              <Github className="h-auto w-5" fill="currentColor" />
+            </div>
+          </Link>
+        </div>
+        <div className="min-w-max min-h-max">
+          <Link
+            href="https://www.linkedin.com/in/oscarlundberg-sthlm"
+            target="_blank"
+            className="p-0.5 flex items-center justify-center group rounded-full"
+            aria-label="Visit my Linkedin page"
+          >
+            <div className="p-2.5 transition-colors duration-100 ease-linear bg-transparent group-hover:bg-[hsl(var(--activeColorH),var(--activeColorS),var(--activeColorL),0.2)] rounded-full">
+              <LinkedIn className="h-auto w-5" fill="currentColor" />
+            </div>
+          </Link>
+        </div>
       </div>
-      <div className="min-w-max min-h-max">
-        <Link
-          href="https://github.com/oscarlundberg-sthlm"
-          target="_blank"
-          className="flex items-center justify-center"
-          aria-label="Visit my Github page"
-        >
-          <div className="p-2">
-            <Github className="h-auto w-6" fill="currentColor" />
-          </div>
-        </Link>
-      </div>
-      <div className="min-w-max min-h-max">
-        <Link
-          href="https://www.linkedin.com/in/oscarlundberg-sthlm"
-          target="_blank"
-          className="flex items-center justify-center"
-          aria-label="Visit my Linkedin page"
-        >
-          <div className="p-2">
-            <LinkedIn className="h-auto w-6" fill="currentColor" />
-          </div>
-        </Link>
-      </div>
+      <ScrollerButton direction="right" />
     </footer>
   );
 }
