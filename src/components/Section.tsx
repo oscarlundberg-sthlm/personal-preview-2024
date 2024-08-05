@@ -1,20 +1,12 @@
 "use client";
 
-import useScrollRevealEffect from "@/hooks/useScrollRevealEffect";
 import { useInView } from "framer-motion";
-import { CSSProperties, ReactNode, useEffect, useRef } from "react";
-
-interface HSL {
-  h: number;
-  s: number;
-  l: number;
-}
+import { CSSProperties, ReactNode, useRef } from "react";
 
 interface Props {
   index: number;
   bgImageSrc: string;
   backgroundPosition?: CSSProperties["backgroundPosition"];
-  hsl: HSL;
   heading?: ReactNode;
   text?: ReactNode;
 }
@@ -23,16 +15,11 @@ function Section({
   index,
   bgImageSrc,
   backgroundPosition,
-  hsl,
   heading,
   text,
 }: Props) {
   const ref = useRef(null);
   const refContent = useRef(null);
-  const contentEffect = useScrollRevealEffect({
-    ref: refContent,
-    direction: "xLeft",
-  });
 
   const inView = useInView(ref, {
     amount: 0.5,
@@ -41,17 +28,11 @@ function Section({
     margin: "0% 100% 0% 100%",
   });
 
-  useEffect(() => {
-    if (inView) {
-      document.documentElement.style.setProperty("--activeColorH", hsl.h + "");
-      document.documentElement.style.setProperty("--activeColorS", hsl.s + "%");
-      document.documentElement.style.setProperty("--activeColorL", hsl.l + "%");
-    }
-  }, [inView, hsl.h, hsl.s, hsl.l]);
+  // useEffect(() => {
+  //   if (inView) {
 
-  useEffect(() => {
-    contentEffect();
-  }, [contentEffect]);
+  //   }
+  // }, [inView]);
 
   const HeadingTag = ({
     children,
@@ -64,10 +45,13 @@ function Section({
   return (
     <section
       ref={ref}
-      className="min-h-full max-h-full min-w-full max-w-full shrink-0 relative snap-center overflow-hidden"
+      className="relative overflow-hidden w-full pt-[160%] sm:pt-[100%] lg:pt-[180%] border-x-0 border-y sm:border border-current"
     >
+      <div className="absolute inset-0 bg-gray-400"></div>
+      {/* <div className="absolute inset-0 bg-2025-beige"></div> */}
+      {/* bg-[#ffae005b] */}
       <div
-        className="absolute -z-10 w-full h-full"
+        className="absolute inset-0 mix-blend-hard-light"
         style={{
           background:
             index === 0 || inViewForLoadImage ? `url("${bgImageSrc}")` : "#111",
@@ -83,31 +67,22 @@ function Section({
               : undefined,
         }}
       ></div>
-      <div
-        // className={classNames(
-        //   "mx-auto max-w-[var(--max-width)] h-full flex ",
-        //   {
-        //     "items-start ": textVertAlign === "top",
-        //     "items-center ": textVertAlign === "center",
-        //     "items-end ": textVertAlign === "bottom",
-        //   }
-        // )}
-        className="absolute bottom-0 inset-x-0"
-      >
-        <div className="relative pt-4 pb-[8rem] xl:pb-32 px-[32px] w-full">
-          <div ref={refContent}>
-            <div className="relative pb-4 ">
-              <HeadingTag className=" font-sans-tight font-extrabold leading-none text-[length:calc(var(--font-size)_/_0.5)] text-white word-spacing">
-                {heading}
-              </HeadingTag>
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/0 to-black"></div> */}
+      <div className="absolute inset-0">
+        {/* <div className="absolute inset-x-0 -top-20 h-32 bg-gradient-to-t from-gray-50 to-gray-50/0"></div>
+          <div className="absolute inset-x-0 bottom-0 top-12 bg-gray-50"></div> */}
+        <div
+          ref={refContent}
+          className="text-black flex flex-col justify-between h-full"
+        >
+          <HeadingTag className="bg-white m-[var(--x-pad)] p-4 sm:p-[var(--x-pad)] font-fraunces font-extrabold leading-none text-[length:calc(var(--font-size)_/_0.5)] word-spacing">
+            {heading}
+          </HeadingTag>
+          {text && (
+            <div className="bg-white overflow-hidden m-[var(--x-pad)] p-4 sm:p-[var(--x-pad)] font-sans leading-[1.5em] text-[length:var(--font-size)] 3xl:leading-[1.5em] font-light">
+              {text}
             </div>
-            {text && (
-              <div className=" overflow-hidden font-sans text-white leading-[1.5em] text-[length:var(--font-size)] 3xl:leading-[1.5em] font-normal">
-                {text}
-              </div>
-            )}
-          </div>
-          <div className="bg-gradient-to-t from-black/90 via-black/70 to-black/0 absolute bottom-0 inset-x-0 -top-16 -z-10"></div>
+          )}
         </div>
       </div>
     </section>

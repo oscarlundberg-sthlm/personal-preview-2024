@@ -1,3 +1,4 @@
+import AnonymousAnalytics from "@/components/AnonymousAnalytics";
 import { ScrollRefContextProvider } from "@/contexts/ScrollRefContext";
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter, Inter_Tight } from "next/font/google";
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0a",
+  themeColor: "#eee",
 };
 
 export default function RootLayout({
@@ -36,12 +37,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full w-full">
+    <html lang="en" className="h-full w-full [--x-pad:10px] sm:[--x-pad:32px]">
       <body
-        className={`${inter.variable} ${interTight.variable} ${fraunces.variable} h-full w-full`}
+        className={`${inter.variable} ${interTight.variable} ${fraunces.variable} h-full w-full bg-[#eee] text-white`}
       >
-        <div className="absolute h-full w-full bg-black/85"></div>
         <ScrollRefContextProvider>{children}</ScrollRefContextProvider>
+        <AnonymousAnalytics />
       </body>
     </html>
   );

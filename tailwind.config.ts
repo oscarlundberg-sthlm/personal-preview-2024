@@ -36,6 +36,13 @@ const config: Config = {
       },
       colors: {
         gray: colors.neutral,
+        2025: {
+          orange: "#EEA16A",
+          red: "#DC6A56",
+          blue: "#2C4063",
+          "blue-light": "#3D7998",
+          beige: "#EED19F",
+        },
       },
       fontFamily: {
         sans: "var(--font-inter)",
