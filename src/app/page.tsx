@@ -16,103 +16,123 @@ export default function Home() {
 
   return (
     <div className="relative border-4 border-current">
-      <div className="absolute inset-0 flex -z-10">
-        {/* <div className="bg-2025-beige w-[49vw] "></div> */}
-        <div className="bg-2025-orange w-[25vw] "></div>
-        <div className="bg-2025-red w-[25vw] "></div>
-        <div className="bg-2025-blue w-[25vw] "></div>
-        <div className="bg-2025-blue-light w-[25vw] "></div>
-      </div>
-      <div className="mx-auto max-w-screen-3xl 3xl:border-y-0 3xl:border-x border-current relative backdrop-blur-2xl">
-        <header className=" [--heading-size:11vw] lg:[--heading-size:min(7vw,100px)] relative border-b border-current px-[var(--x-pad)]">
-          <div className="flex justify-between">
-            <h1 className=" font-fraunces font-black text-[length:var(--heading-size)] tracking-tighter">
-              Oscar Lundberg
-            </h1>
-            <div className="hidden lg:block">
-              <PersonalLinks />
+      <div className="absolute inset-0 -z-10 rainbow-gradient"></div>
+      <div
+        className="absolute inset-0 -z-10 bg-repeat mix-blend-soft-light brightness-50"
+        style={{
+          backgroundImage: "url('img/noise_3.png')",
+        }}
+      ></div>
+      <div className="mx-auto max-w-screen-3xl">
+        <div className="xl:mx-[var(--x-pad)] xl:border-y-0 xl:border-x border-current relative">
+          <header className=" [--heading-size:11vw] lg:[--heading-size:min(7vw,100px)] relative border-b border-current px-[var(--x-pad)]">
+            <div className="flex justify-between">
+              <div className=" font-fraunces font-black text-[length:var(--heading-size)] tracking-tighter">
+                Oscar Lundberg
+              </div>
+              <div className="hidden lg:block">
+                <PersonalLinks />
+              </div>
             </div>
-          </div>
-        </header>
-        <section className="relative w-full grid lg:grid-cols-2 xl:grid-cols-3 gap-[var(--x-pad)] py-[var(--x-pad)] sm:p-[var(--x-pad)]">
-          <Section
-            index={0}
-            bgImageSrc="/img/DSC_0153-min.jpg"
-            backgroundPosition="top 10% center"
-            heading={<>Hi! I&apos;m&nbsp;Oscar</>}
-            text={<>- A creative person who writes&nbsp;code.</>}
-          />
-          <Section
-            index={1}
-            bgImageSrc="/img/tom-rogerson-XYJ-huzNby4-unsplash.jpg"
-            backgroundPosition="bottom 30% center"
-            heading={<>I used to be in a bunch of&nbsp;bands</>}
-            text={
-              <>
-                <p>
-                  I played rock, soul, electro, behind singer-songwriters
-                  and&nbsp;artists.
-                </p>
-                <p className="pt-3">
-                  Being in bands naturally entails a lot of cooperation and
-                  doing your part, while collectively working towards a
-                  common&nbsp;goal.
-                </p>
-              </>
-            }
-          />
-          <Section
-            index={2}
-            bgImageSrc="/img/patrick-hendry-_JjBZdLFQiM-unsplash.jpg"
-            backgroundPosition="top 20% center"
-            heading={<>Now I climb walls</>}
-            text={
-              <>
-                <p>
-                  I like going to the climbing gym in my spare time. I&apos;ve
-                  always been a fan of sports like climbing, skateboard &
-                  snowboard - where you can get into a flow&nbsp;state.
-                </p>
-                <p className="pt-3">To me, it&apos;s like meditation.</p>
-              </>
-            }
-          />
-          <Section
-            index={3}
-            bgImageSrc="/img/computer.jpg"
-            heading={
-              <>
-                Professional experience in
-                <br />
-                various areas
-              </>
-            }
-            text={
-              <>
-                I&apos;ve worked with ecosystems like Next.js (React), Laravel
-                (PHP) & Wordpress. From databases & backend, CMS, frontend &
-                design tweaks, to deployment, DNS,&nbsp;etc...
-              </>
-            }
-          />
-          <Section
-            index={4}
-            bgImageSrc="/img/camping.jpg"
-            backgroundPosition="top 0% center"
-            heading={<>Everyday vibes are everything</>}
-            text={
-              <>
-                <p>
-                  Most of our life is lived through work. That&apos;s why the
-                  everyday matters to me. Add the days up and that&apos;s the
-                  life you&nbsp;lived.
-                </p>
-                <p className="pt-3">How&apos;s your average&nbsp;day?</p>
-              </>
-            }
-          />
-        </section>
-        <Footer />
+          </header>
+          <main>
+            <section className="relative w-full grid lg:grid-cols-2 xl:grid-cols-3 gap-[var(--x-pad)] p-[var(--x-pad)] sm:p-[var(--x-pad)]">
+              <Section
+                index={0}
+                bgImageSrc="/img/DSC_0153-min.jpg"
+                backgroundPosition="top 10% center"
+                heading={<>Hi! I&apos;m&nbsp;Oscar</>}
+                text={
+                  <p>
+                    I&apos;m a frontend developer graduate who got hired as a
+                    software engineer straight out of&nbsp;school.
+                  </p>
+                }
+              />
+              <Section
+                index={1}
+                bgImageSrc="/img/tom-rogerson-XYJ-huzNby4-unsplash.jpg"
+                backgroundPosition="bottom 30% center"
+                heading={<>I used to be in a bunch of&nbsp;bands</>}
+                text={
+                  <>
+                    <p>
+                      I&apos;ve had the pleasure to be in bands, play behind
+                      singer-songwriters and&nbsp;artists.
+                    </p>
+                    <p className="pt-3">
+                      Playing music with others comes with a lot of practise in
+                      cooperation and doing your part, while collectively
+                      working towards a common&nbsp;goal.
+                    </p>
+                  </>
+                }
+              />
+              <Section
+                index={2}
+                bgImageSrc="/img/patrick-hendry-_JjBZdLFQiM-unsplash.jpg"
+                backgroundPosition="top 20% center"
+                heading={<>Now I climb walls</>}
+                text={
+                  <>
+                    <p>
+                      I like going to the climbing gym in my spare time.
+                      I&apos;ve always been a fan of sports like climbing,
+                      skateboarding and snowboarding - where you can get into a
+                      flow&nbsp;state.
+                    </p>
+                    <p className="pt-3">
+                      To me, it&apos;s like&nbsp;meditation.
+                    </p>
+                  </>
+                }
+              />
+              <Section
+                index={3}
+                bgImageSrc="/img/computer.jpg"
+                heading={<>Professional experience in various areas</>}
+                text={
+                  <>
+                    <p>
+                      I&apos;ve worked with frameworks like Next.js (React,
+                      TypeScript, JavaScript) and Laravel (PHP, Blade).
+                      CMS&apos;s like Sanity, Statamic and Wordpress. All kinds
+                      of third-party integrations.
+                    </p>
+                    <p className="pt-3">
+                      I&apos;ve touched most parts of web development, from
+                      databases & backend, CMS, frontend & design tweaks, to
+                      deployment, DNS,&nbsp;etc...
+                    </p>
+                  </>
+                }
+              />
+              <Section
+                index={4}
+                bgImageSrc="/img/camping.jpg"
+                backgroundPosition="top 0% center"
+                heading={<>Everyday vibes are everything</>}
+                text={
+                  <>
+                    <p>
+                      Most days are spent at work. In fact, most of our life is
+                      lived at work. That&apos;s why the everyday vibes matter
+                      to&nbsp;me.
+                    </p>
+                    <p className="pt-3">
+                      The "everyday vibes" are a lot to unpack in a little text
+                      box, but in short, if your workplace has actual sincere,
+                      warm laughter on the regular - that&apos;s a good sign -
+                      some workplaces haven&apos;t experienced real laughter in
+                      years, if&nbsp;at&nbsp;all.
+                    </p>
+                  </>
+                }
+              />
+            </section>
+          </main>
+          <Footer />
+        </div>
       </div>
     </div>
   );

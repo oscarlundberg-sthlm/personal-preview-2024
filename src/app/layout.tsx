@@ -24,11 +24,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env?.NEXT_PUBLIC_URL ?? ""),
   title: "Oscar Lundberg • Creative coder",
   description:
-    "Hey 👋🏻 I'm Oscar, all around creative person and coder. This is a glimpse into who I am.",
+    "Hi! 👋🏻 I'm Oscar, all around creative person and coder. This is a glimpse into who I am.",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#eee",
+  themeColor: "#fff",
 };
 
 export default function RootLayout({
@@ -37,9 +37,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full w-full [--x-pad:10px] sm:[--x-pad:32px]">
+    <html lang="en" className="h-full w-full [--x-pad:18px] sm:[--x-pad:32px]">
       <body
-        className={`${inter.variable} ${interTight.variable} ${fraunces.variable} h-full w-full bg-[#eee] text-white`}
+        className={`${inter.variable} ${interTight.variable} ${fraunces.variable} h-full w-full bg-[#111] text-white`}
       >
         <ScrollRefContextProvider>{children}</ScrollRefContextProvider>
         <AnonymousAnalytics />

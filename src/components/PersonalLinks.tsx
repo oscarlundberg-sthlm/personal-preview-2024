@@ -9,7 +9,7 @@ function PersonalLinks() {
           className="p-0.5 flex items-center justify-center group rounded-full border border-current relative"
           aria-label="Send me an email"
         >
-          <div className="absolute -inset-px transition duration-100 ease-linear border border-current rounded-full group-hover:scale-[1.2] -z-10"></div>
+          <div className="absolute -inset-px transition duration-100 ease-linear border border-current rounded-full opacity-0 group-hover:opacity-100 group-hover:scale-[1.2] -z-10"></div>
           <div className="p-2.5">
             <Email className="h-auto w-5" fill="currentColor" />
           </div>
