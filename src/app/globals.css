@@ -13,7 +13,7 @@
 }
 
 body {
-  @apply overscroll-none text-black selection:text-white selection:bg-gray-800;
+  @apply overscroll-none text-black selection:text-white selection:bg-2025-orange;
 }
 
 @layer base {

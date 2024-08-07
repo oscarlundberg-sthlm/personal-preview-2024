@@ -2,18 +2,8 @@
 import Footer from "@/components/Footer";
 import PersonalLinks from "@/components/PersonalLinks";
 import Section from "@/components/Section";
-import { useScrollRefContext } from "@/contexts/ScrollRefContext";
-import { useEffect, useRef } from "react";
 
 export default function Home() {
-  const { setRef } = useScrollRefContext();
-  const scrollRef = useRef(null);
-
-  useEffect(() => {
-    if (!scrollRef || !setRef) return;
-    setRef(scrollRef);
-  }, [setRef, scrollRef]);
-
   return (
     <div className="relative border-4 border-current">
       <div className="absolute inset-0 -z-10 rainbow-gradient"></div>

@@ -1,5 +1,4 @@
 import AnonymousAnalytics from "@/components/AnonymousAnalytics";
-import { ScrollRefContextProvider } from "@/contexts/ScrollRefContext";
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter, Inter_Tight } from "next/font/google";
 import "./globals.css";
@@ -41,7 +40,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${interTight.variable} ${fraunces.variable} h-full w-full bg-[#111] text-white`}
       >
-        <ScrollRefContextProvider>{children}</ScrollRefContextProvider>
+        {children}
         <AnonymousAnalytics />
       </body>
     </html>
