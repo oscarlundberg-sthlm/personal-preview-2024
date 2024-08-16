@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && touch ./dist/.nojekyll",
+    "build": "next build && touch ./dist/.nojekyll && cp ./deploy_files/CNAME ./dist",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "imagepreviews": "./imagepreviews.sh"
   },
   "dependencies": {
     "classnames": "^2.3.2",

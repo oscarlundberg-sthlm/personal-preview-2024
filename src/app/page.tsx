@@ -1,9 +1,18 @@
 "use client";
 import Footer from "@/components/Footer";
-import PersonalLinks from "@/components/PersonalLinks";
+import Logo from "@/components/Logo";
 import Section from "@/components/Section";
+import SocialLinks from "@/components/SocialLinks";
+import SocialLinksVertical from "@/components/SocialLinksVertical";
+import classNames from "classnames";
+import { useInView } from "react-intersection-observer";
 
 export default function Home() {
+  const { ref: socialLinksMobileTopRef, inView: socialLinksMobileTopInView } =
+    useInView({
+      initialInView: true,
+    });
+
   return (
     <div className="relative border-4 border-current">
       <div className="absolute inset-0 -z-10 rainbow-gradient"></div>
@@ -15,21 +24,28 @@ export default function Home() {
       ></div>
       <div className="mx-auto max-w-screen-3xl">
         <div className="xl:mx-[var(--x-pad)] xl:border-y-0 xl:border-x border-current relative">
-          <header className=" [--heading-size:11vw] lg:[--heading-size:min(7vw,100px)] relative border-b border-current px-[var(--x-pad)]">
-            <div className="flex justify-between">
-              <div className=" font-fraunces font-black text-[length:var(--heading-size)] tracking-tighter">
-                Oscar Lundberg
+          <header className="relative border-b border-current px-[var(--x-pad)]">
+            <div className="[--heading-size:11vw] lg:[--heading-size:min(8vw,145px)] lg:flex lg:justify-between relative">
+              <div className=" mb-[4%] mt-[10%] mx-[3%] lg:mx-0 lg:mb-[calc(var(--heading-size)*0.13)] lg:mt-[calc(var(--heading-size)*0.5)] relative">
+                <Logo className="fill-white w-full h-auto lg:h-[var(--heading-size)] lg:w-auto" />
               </div>
+
               <div className="hidden lg:block">
-                <PersonalLinks />
+                <SocialLinks />
               </div>
             </div>
           </header>
+          <div
+            ref={socialLinksMobileTopRef}
+            className="pt-[var(--x-pad)] flex justify-center lg:hidden"
+          >
+            <SocialLinks />
+          </div>
           <main>
             <section className="relative w-full grid lg:grid-cols-2 xl:grid-cols-3 gap-[var(--x-pad)] p-[var(--x-pad)] sm:p-[var(--x-pad)]">
               <Section
                 index={0}
-                bgImageSrc="/img/DSC_0153-min.jpg"
+                bgImageSrc="DSC_0153-min.jpg"
                 backgroundPosition="top 10% center"
                 heading={<>Hi! I&apos;m&nbsp;Oscar</>}
                 text={
@@ -41,7 +57,7 @@ export default function Home() {
               />
               <Section
                 index={1}
-                bgImageSrc="/img/tom-rogerson-XYJ-huzNby4-unsplash.jpg"
+                bgImageSrc="tom-rogerson-XYJ-huzNby4-unsplash.jpg"
                 backgroundPosition="bottom 30% center"
                 heading={<>I used to be in a bunch of&nbsp;bands</>}
                 text={
@@ -60,7 +76,7 @@ export default function Home() {
               />
               <Section
                 index={2}
-                bgImageSrc="/img/patrick-hendry-_JjBZdLFQiM-unsplash.jpg"
+                bgImageSrc="patrick-hendry-_JjBZdLFQiM-unsplash.jpg"
                 backgroundPosition="top 20% center"
                 heading={<>Now I climb walls</>}
                 text={
@@ -79,7 +95,7 @@ export default function Home() {
               />
               <Section
                 index={3}
-                bgImageSrc="/img/computer.jpg"
+                bgImageSrc="computer.jpg"
                 heading={<>Professional experience in various areas</>}
                 text={
                   <>
@@ -99,7 +115,7 @@ export default function Home() {
               />
               <Section
                 index={4}
-                bgImageSrc="/img/camping.jpg"
+                bgImageSrc="camping.jpg"
                 backgroundPosition="top 0% center"
                 heading={<>Everyday vibes are everything</>}
                 text={
@@ -110,11 +126,11 @@ export default function Home() {
                       to&nbsp;me.
                     </p>
                     <p className="pt-3">
-                      The "everyday vibes" are a lot to unpack in a little text
-                      box, but in short, if your workplace has actual sincere,
-                      warm laughter on the regular - that&apos;s a good sign -
-                      some workplaces haven&apos;t experienced real laughter in
-                      years, if&nbsp;at&nbsp;all.
+                      The &quot;everyday vibes&quot; are a lot to unpack in a
+                      little text box, but in short, if your workplace has
+                      actual sincere, warm laughter on the regular - that&apos;s
+                      a good sign - some workplaces haven&apos;t experienced
+                      real laughter in years, if&nbsp;at&nbsp;all.
                     </p>
                   </>
                 }
@@ -122,6 +138,19 @@ export default function Home() {
             </section>
           </main>
           <Footer />
+        </div>
+      </div>
+      <div
+        className={classNames(
+          "fixed lg:hidden right-0 top-0 transition-transform",
+          {
+            "translate-y-0 ": !socialLinksMobileTopInView,
+            "-translate-y-full": socialLinksMobileTopInView,
+          }
+        )}
+      >
+        <div className="pt-3 pr-3">
+          <SocialLinksVertical />
         </div>
       </div>
     </div>

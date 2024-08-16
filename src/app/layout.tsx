@@ -38,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full w-full [--x-pad:18px] sm:[--x-pad:32px]">
       <body
-        className={`${inter.variable} ${interTight.variable} ${fraunces.variable} h-full w-full bg-[#111] text-white`}
+        className={`${inter.variable} ${interTight.variable} ${fraunces.variable} h-full w-full bg-gray-600 text-white`}
       >
         {children}
         <AnonymousAnalytics />
